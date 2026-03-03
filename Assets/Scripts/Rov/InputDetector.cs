@@ -18,6 +18,7 @@ namespace RovSim.Rov
 		public bool CameraTiltUpPressed { get; private set; }
 		public bool CameraTiltDownPressed { get; private set; }
 		public bool enableDebug;
+		public bool GrabberClosed { get; private set; }
 
 		public void PressClose(InputAction.CallbackContext context)
 		{
@@ -187,6 +188,15 @@ namespace RovSim.Rov
 				if (enableDebug) Debug.Log("camera tilt down released");
 				CameraTiltDownPressed = false;
 			}
+		}
+
+		public void PressToggleGrabber(InputAction.CallbackContext context)
+		{
+			if (!context.started) return; // срабатывает один раз на нажатие
+
+			GrabberClosed = !GrabberClosed;
+
+			if (enableDebug) Debug.Log("TOGGLE GRABBER -> " + (GrabberClosed ? "CLOSE" : "OPEN"));
 		}
 	}
 }

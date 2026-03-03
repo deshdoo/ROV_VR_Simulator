@@ -1,73 +1,105 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+
+[RequireComponent(typeof(Rigidbody))]
 public class RovController : MonoBehaviour
 {
     [Header("Тяга двигателей")]
-    public float thrustForward = 5f; // сила вперед/назад
-    public float thrustSide = 5f; // сила влево/вправо
-    public float thrustVertical = 4f; // сила вверх/вниз
-    public float torqueYaw = 2f; // сила поворота
+    public float thrustForward = 5f;   // вперёд/назад
+    public float thrustSide = 5f;      // влево/вправо
+    public float thrustVertical = 4f;  // вверх/вниз (правый стик Y)
+    public float torqueYaw = 0.5f;     // поворот (правый стик X)
+
+    [Header("VR input (Input Actions)")]
+    public InputActionReference moveAction;    // Move (Vector2) = Left stick
+    public InputActionReference rotateAction;  // Rotate (Vector2) = Right stick
+    public InputActionReference manipulatorOpenAction;
+    public InputActionReference manipulatorCloseAction;
+
+    [Header("Tuning")]
+    [Range(0f, 0.5f)] public float deadzone = 0.15f;
+    public bool invertVertical = false;
 
     private Rigidbody _rb;
-
-    // переменная для хранения ввода между Update и FixedUpdate
-    private Vector3 _moveInput;
-    private float _rotateInput;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+        _rb.useGravity = false;
+        _rb.linearDamping = 2f;
+        _rb.angularDamping = 3f;
+    }
 
-        _rb.useGravity = false; // отключаем гравитацию, чтобы объект плавал
-        _rb.linearDamping = 2f; // сопротивление движению (вода тормозит)
-        _rb.angularDamping = 3f; // сопротивление вращению
+    private void OnEnable()
+    {
+        moveAction?.action.Enable();
+        rotateAction?.action.Enable();
+        manipulatorOpenAction?.action.Enable();
+        manipulatorCloseAction?.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveAction?.action.Disable();
+        rotateAction?.action.Disable();
+        manipulatorOpenAction?.action.Disable();
+        manipulatorCloseAction?.action.Disable();
     }
 
     private void Update()
-{
-    // Левый стик (WASD) — движение
-    float forward = 0f;
-    float side    = 0f;
-
-    if (Input.GetKey(KeyCode.W)) forward =  1f;  // вперёд
-    if (Input.GetKey(KeyCode.S)) forward = -1f;  // назад
-    if (Input.GetKey(KeyCode.A)) side = -1f;  // стрейф влево
-    if (Input.GetKey(KeyCode.D)) side =  1f;  // стрейф вправо
-
-   // Правый стик - Стрелки
-    float up = 0f;
-    float rotate = 0f;
-
-    if (Input.GetKey(KeyCode.UpArrow)) up = 1f;  // вверх
-    if (Input.GetKey(KeyCode.DownArrow)) up = -1f;  // вниз
-    if (Input.GetKey(KeyCode.LeftArrow)  || Input.GetKey(KeyCode.PageUp))   rotate = -1f; //поворот налево
-    if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.PageDown)) rotate =  1f; // поворот направо
-
-        // Определяем какой KeyCode у твоих стрелок
-    if (Input.anyKeyDown)
     {
-        foreach (KeyCode kc in System.Enum.GetValues(typeof(KeyCode)))
+        if (manipulatorOpenAction != null && manipulatorOpenAction.action.WasPressedThisFrame())
         {
-            if (Input.GetKeyDown(kc))
-                Debug.Log("Нажата клавиша: " + kc);
+            Debug.Log("Manipulator OPEN (G)");
+            OpenManipulator();
+        }
+
+        if (manipulatorCloseAction != null && manipulatorCloseAction.action.WasPressedThisFrame())
+        {
+            Debug.Log("Manipulator CLOSE (F)");
+            CloseManipulator();
         }
     }
 
-    _moveInput = new Vector3(side, up, forward);
-    _rotateInput = rotate;
-}
-
     private void FixedUpdate()
     {
-        Debug.Log("moveInput: " + _moveInput + " | rotate: " + _rotateInput);
+        Vector2 move = moveAction != null ? moveAction.action.ReadValue<Vector2>() : Vector2.zero;
+        Vector2 rot  = rotateAction != null ? rotateAction.action.ReadValue<Vector2>() : Vector2.zero;
+
+        move = ApplyDeadzone(move, deadzone);
+        rot  = ApplyDeadzone(rot, deadzone);
+
+        float side = move.x;        // левый стик X: влево/вправо
+        float forward = move.y;     // левый стик Y: вперёд/назад
+
+        float yaw = rot.x;          // правый стик X: поворот
+        float up = invertVertical ? -rot.y : rot.y; // правый стик Y: вверх/вниз
+
         _rb.AddRelativeForce(new Vector3(
-        _moveInput.x * thrustSide,      // A/D — вправо/влево
-        _moveInput.y * thrustVertical,  // стрелки — вверх/вниз
-        _moveInput.z * thrustForward    // W/S — вперёд/назад
-    ), ForceMode.Force);
-        
-        _rb.AddRelativeTorque(
-    Vector3.up * _rotateInput * torqueYaw,
-    ForceMode.Force
-    );
+            side * thrustSide,
+            up * thrustVertical,
+            forward * thrustForward
+        ), ForceMode.Force);
+
+        _rb.AddRelativeTorque(Vector3.up * yaw * torqueYaw, ForceMode.Force);
+
+        Debug.Log($"Move: {move} Rotate: {rot}");
+    }
+
+    private static Vector2 ApplyDeadzone(Vector2 v, float dz)
+    {
+        if (v.magnitude < dz) return Vector2.zero;
+        float m = Mathf.InverseLerp(dz, 1f, v.magnitude);
+        return v.normalized * m;
+    }
+
+    private void OpenManipulator()
+    {
+        Debug.Log("OpenManipulator() called");
+    }
+
+    private void CloseManipulator()
+    {
+        Debug.Log("CloseManipulator() called");
     }
 }

@@ -6,19 +6,21 @@ namespace RovSim.Rov
 	{
 		private Animator _animator;
 		private InputDetector _inputDetector;
+		private bool _isClosed;
+		private bool _lastButtonState;
 
 		private void Awake()
 		{
 			_inputDetector = GetComponent<InputDetector>();
 		}
 
-		// Start is called before the first frame update
+
 		private void Start()
 		{
 			_animator = GetComponent<Animator>();
 		}
 
-		// Update is called once per frame
+
 		private void Update()
 		{
 			Grab();
@@ -26,15 +28,7 @@ namespace RovSim.Rov
 
 		private void Grab()
 		{
-			if (_inputDetector.ClosePressed)
-			{
-				_animator.SetBool("Open Grabber", true);
-			}
-
-			if (_inputDetector.OpenPressed)
-			{
-				_animator.SetBool("Open Grabber", false);
-			}
+			_animator.SetBool("Open Grabber", ! _inputDetector.GrabberClosed);
 		}
 	}
 }

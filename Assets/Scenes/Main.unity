@@ -5313,6 +5313,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &115551054 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1548616752326558286, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+  m_PrefabInstance: {fileID: 225862315}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8801bb7f9b04452da7133ab9b4d7a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &192919060
 GameObject:
   m_ObjectHideFlags: 0
@@ -5354,6 +5365,98 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: a37c230d7e717604fa83aca29bae6867, type: 3}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: ROV
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: 430a5400-c3b1-44d6-9539-32bb3da39c07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 30e9c8d2-8ff7-4c43-a244-008983d35b14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: 3407039b-c094-4005-bb9b-ea997573868a
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: 'ROV/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: 'ROV/Rotate[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: 'ROV/ToggleGrabber[/Keyboard/f]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionName
+      value: 'Player/OpenGrabber[/Keyboard/g]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionName
+      value: 'Player/CloseGrabber[/Keyboard/f]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 115551054}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PressToggleGrabber
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RovSim.Rov.InputDetector, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558281, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548616752326558286, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7557023252504341545, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
       propertyPath: m_Name
       value: ROV
@@ -5403,8 +5506,76 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: a37c230d7e717604fa83aca29bae6867, type: 3}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: ROV
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: 430a5400-c3b1-44d6-9539-32bb3da39c07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 30e9c8d2-8ff7-4c43-a244-008983d35b14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: 3407039b-c094-4005-bb9b-ea997573868a
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: 'ROV/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: 'ROV/Rotate[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: 'ROV/ToggleGrabber[/Keyboard/f]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 115551054}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PressToggleGrabber
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RovSim.Rov.InputDetector, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341553, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7557023252504341558, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
       propertyPath: m_Enabled
@@ -5412,7 +5583,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7557023252504341559, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557023252504341559, guid: d15cfa1b5937bc7438a9f51e16a078db, type: 3}
+      propertyPath: enableDebug
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11667,71 +11842,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -25.143, y: -8.253, z: 5.752}
---- !u!1 &796444619
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 796444621}
-  - component: {fileID: 796444620}
-  m_Layer: 0
-  m_Name: Reflection Probe
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!215 &796444620
-ReflectionProbe:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796444619}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
-  m_TimeSlicingMode: 0
-  m_Resolution: 128
-  m_UpdateFrequency: 0
-  m_BoxSize: {x: 20, y: 10, z: 20}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
-  m_NearClip: 0.3
-  m_FarClip: 1000
-  m_ShadowDistance: 100
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IntensityMultiplier: 1
-  m_BlendDistance: 1
-  m_HDR: 1
-  m_BoxProjection: 0
-  m_RenderDynamicObjects: 0
-  m_UseOcclusionCulling: 1
-  m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
---- !u!4 &796444621
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796444619}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.1468, y: -1.0357661, z: 71.49}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &812645945
 GameObject:
   m_ObjectHideFlags: 0
@@ -24112,6 +24222,20 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e0c9209029399b459dc03738f9a2b9e, type: 3}
+--- !u!114 &1714051126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: ROV/Move
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: -944628639613478452, guid: a37c230d7e717604fa83aca29bae6867, type: 3}
+  m_ActionId: 430a5400-c3b1-44d6-9539-32bb3da39c07
 --- !u!114 &1742727434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24214,7 +24338,13 @@ MonoBehaviour:
   thrustForward: 5
   thrustSide: 5
   thrustVertical: 4
-  torqueYaw: 0.25
+  torqueYaw: 0.2
+  moveAction: {fileID: 1714051126}
+  rotateAction: {fileID: 1994293857}
+  manipulatorOpenAction: {fileID: 0}
+  manipulatorCloseAction: {fileID: 0}
+  deadzone: 0.15
+  invertVertical: 0
 --- !u!1 &1798394667
 GameObject:
   m_ObjectHideFlags: 0
@@ -24426,6 +24556,20 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1994293857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: ROV/Rotate
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: -944628639613478452, guid: a37c230d7e717604fa83aca29bae6867, type: 3}
+  m_ActionId: 30e9c8d2-8ff7-4c43-a244-008983d35b14
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -24459,5 +24603,4 @@ SceneRoots:
   - {fileID: 1022451183}
   - {fileID: 1798394669}
   - {fileID: 1364148302}
-  - {fileID: 796444621}
   - {fileID: 6254866}
